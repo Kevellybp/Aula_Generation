@@ -29,6 +29,7 @@ protected void configure (HttpSecurity http) throws Exception {
 	http.authorizeRequests() //restringir acesso a tudo
 	.antMatchers("/usuarios/logar").permitAll()
 	.antMatchers("/usuarios/cadastrar").permitAll()
+	.antMatchers("/usuarios/id").permitAll()
 	.anyRequest().authenticated()
 	.and().httpBasic() // configura a autenticação por http basic 
 	.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
