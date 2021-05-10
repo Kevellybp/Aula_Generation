@@ -15,14 +15,16 @@ private String password;
 public UserDetailsImpl (Usuario user) {
 	this.userName = user.getUsuario();
 	this.password = user.getSenha();
+	//private List<GrantedAuthority> authorities;
 }
 	public UserDetailsImpl () {}
-	
+
+
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return null; //autthority 
 	}
 
 	@Override

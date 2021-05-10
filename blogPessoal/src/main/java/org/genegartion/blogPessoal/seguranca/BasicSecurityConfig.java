@@ -26,14 +26,14 @@ public PasswordEncoder passwordEncoder () {
 }
 @Override
 protected void configure (HttpSecurity http) throws Exception {
-	http.authorizeRequests()
+	http.authorizeRequests() //restringir acesso a tudo
 	.antMatchers("/usuarios/logar").permitAll()
 	.antMatchers("/usuarios/cadastrar").permitAll()
 	.anyRequest().authenticated()
-	.and().httpBasic()
+	.and().httpBasic() // configura a autenticação por http basic 
 	.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-	.and().cors()
-	.and().csrf().disable();
+	.and().cors() 
+	.and().csrf().disable(); //adiciona suporte csrf = falsificação de solicitação entre sites
 	
 }
 }
